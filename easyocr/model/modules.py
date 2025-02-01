@@ -3,7 +3,16 @@ import torch.nn as nn
 import torch.nn.functional as F
 import torch.nn.init as init
 from torchvision import models
-from torchvision.models.vgg import model_urls
+# from torchvision.models.vgg import model_urls
+model_urls = {
+    "vgg11": "http://download.pytorch.org/models/vgg11-bbd30ac9.pth",
+    "vgg13": "http://download.pytorch.org/models/vgg13-c768596a.pth",
+    "vgg16": "http://download.pytorch.org/models/vgg16-397923af.pth",
+    "vgg19": "http://download.pytorch.org/models/vgg19-dcbb9e9d.pth",
+    "vgg16_bn": "http://download.pytorch.org/models/vgg16_bn-6c64b313.pth"
+}
+
+
 from collections import namedtuple
 
 def init_weights(modules):
