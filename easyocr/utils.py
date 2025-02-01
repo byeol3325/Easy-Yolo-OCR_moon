@@ -529,9 +529,9 @@ def compute_ratio_and_resize(img,width,height,model_height):
     ratio = width/height
     if ratio<1.0:
         ratio = calculate_ratio(width,height)
-        img = cv2.resize(img,(model_height,int(model_height*ratio)), interpolation=Image.ANTIALIAS)
+        img = cv2.resize(img,(model_height,int(model_height*ratio)), interpolation=Image.INTER_LANCZOS4)
     else:
-        img = cv2.resize(img,(int(model_height*ratio),model_height),interpolation=Image.ANTIALIAS)
+        img = cv2.resize(img,(int(model_height*ratio),model_height),interpolation=Image.INTER_LANCZOS4)
     return img,ratio
 
 
